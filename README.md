@@ -1,6 +1,6 @@
-# Klar
+# klar
 
-[![Build Status](https://github.dronehippie.de/api/badges/toolhippie/klar/status.svg)](https://github.dronehippie.de/toolhippie/klar)
+[![Build Status](https://cloud.drone.io/api/badges/toolhippie/klar/status.svg)](https://cloud.drone.io/toolhippie/klar)
 [![](https://images.microbadger.com/badges/image/toolhippie/klar:latest.svg)](https://microbadger.com/images/toolhippie/klar:latest "Get your own image badge on microbadger.com")
 
 TBD

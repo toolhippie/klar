@@ -1,0 +1,26 @@
+FROM webhippie/golang:latest AS build
+
+ENV KLAR_PATH github.com/optiopay/klar
+ENV KLAR_REPO https://${KLAR_PATH}.git
+ENV KLAR_BRANCH v2.4.0
+
+RUN go get -u github.com/kardianos/govendor && \
+  git clone -b ${KLAR_BRANCH} ${KLAR_REPO} /srv/app/src/${KLAR_PATH} && \
+  cd /srv/app/src/${KLAR_PATH} && \
+  govendor sync && \
+  GO111MODULE=off go install
+
+FROM webhippie/alpine:latest
+
+LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
+  org.label-schema.name="Klar" \
+  org.label-schema.vendor="Thomas Boerger" \
+  org.label-schema.schema-version="1.0"
+
+ENTRYPOINT ["/usr/bin/klar"]
+
+RUN apk update && \
+  apk upgrade && \
+  rm -rf /var/cache/apk/*
+
+COPY --from=build /srv/app/bin/klar /usr/bin/
