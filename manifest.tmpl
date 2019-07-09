@@ -1,0 +1,19 @@
+image: toolhippie/klar:latest
+manifests:
+  -
+    image: toolhippie/klar:amd64
+    platform:
+      architecture: amd64
+      os: linux
+  -
+    image: toolhippie/klar:arm64v8
+    platform:
+      architecture: arm64
+      os: linux
+      variant: v8
+  -
+    image: toolhippie/klar:arm32v6
+    platform:
+      architecture: arm
+      os: linux
+      variant: v6
