@@ -1,4 +1,4 @@
-FROM webhippie/golang:latest AS build
+FROM webhippie/golang:latest-amd64 AS build
 
 ENV KLAR_PATH github.com/optiopay/klar
 ENV KLAR_REPO https://${KLAR_PATH}.git
@@ -10,7 +10,7 @@ RUN go get -u github.com/kardianos/govendor && \
   govendor sync && \
   GO111MODULE=off go install
 
-FROM webhippie/alpine:latest
+FROM webhippie/alpine:latest-amd64
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
   org.label-schema.name="Klar" \
