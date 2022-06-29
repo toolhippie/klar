@@ -9,7 +9,7 @@ RUN go get -u github.com/kardianos/govendor && \
   govendor sync && \
   GO111MODULE=off go install
 
-FROM webhippie/alpine:latest
+FROM webhippie/alpine:3.15
 ENTRYPOINT [""]
 
 RUN apk update && \
