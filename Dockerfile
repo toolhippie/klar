@@ -4,7 +4,7 @@ FROM webhippie/golang:1.18 AS build
 ENV KLAR_VERSION=2.4.0
 
 RUN go get -u github.com/kardianos/govendor && \
-  git clone -b ${KLAR_VERSION} https://github.com/optiopay/klar.git /srv/app/src/github.com/optiopay/klar && \
+  git clone -b v${KLAR_VERSION} https://github.com/optiopay/klar.git /srv/app/src/github.com/optiopay/klar && \
   cd /srv/app/src/github.com/optiopay/klar && \
   govendor sync && \
   GO111MODULE=off go install
