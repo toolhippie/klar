@@ -1,4 +1,4 @@
-FROM webhippie/golang:1.19 AS build
+FROM webhippie/golang:1.20 AS build
 
 # renovate: datasource=github-releases depName=optiopay/klar
 ENV KLAR_VERSION=2.4.0
