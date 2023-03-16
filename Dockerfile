@@ -1,4 +1,4 @@
-FROM webhippie/golang:1.20 AS build
+FROM ghcr.io/webhippie/golang:1.20 AS build
 
 # renovate: datasource=github-releases depName=optiopay/klar
 ENV KLAR_VERSION=2.4.0
@@ -9,7 +9,7 @@ RUN go get -u github.com/kardianos/govendor && \
   govendor sync && \
   GO111MODULE=off go install
 
-FROM webhippie/alpine:3.17
+FROM ghcr.io/webhippie/alpine:3.17
 ENTRYPOINT [""]
 
 RUN apk update && \
