@@ -1,4 +1,4 @@
-FROM ghcr.io/dockhippie/golang:1.20@sha256:9fa4ba6145d0e40eda5a4ce47bab651b9b0a5e846e1a476ea8c3af978d5b2c7a AS build
+FROM ghcr.io/dockhippie/golang:1.23@sha256:8d1cff06bc3ad04ddc93f0b5346deb48d4079d4a69da49acb207c0c0010041f4 AS build
 
 # renovate: datasource=github-releases depName=optiopay/klar
 ENV KLAR_VERSION=2.4.0
