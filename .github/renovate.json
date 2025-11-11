@@ -6,10 +6,10 @@
     "packageRules": [
         {
             "description": "No updates for newer go",
-            "datasources": [
+            "matchDatasources": [
                 "docker"
             ],
-            "updateTypes": [
+            "matchUpdateTypes": [
                 "major",
                 "minor"
             ],
